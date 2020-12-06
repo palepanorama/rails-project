@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'players/selected', to 'players#selected'
-  resources: players 
+  get 'players/selected', to: 'players#selected'
+  resources :players 
 
   devise_for :users, :controllers => {registrations: 'registrations', omniauth_callbacks: 'callbacks'}
   root to: 'application#welcome'

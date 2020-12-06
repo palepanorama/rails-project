@@ -1,0 +1,8 @@
+<% if @players %>
+    <h3>My team:</h3>
+    <% @players.each do |p| %>
+        <%= link_to p.name, player_path(p) %>
+    <% end %>
+<% else %>
+    <h3>ok</h3>
+<% end %>
