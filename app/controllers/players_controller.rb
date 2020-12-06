@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
     def index
-        @players = current_user.players 
+        @players = Player.all
     end 
 
     def show 
@@ -11,16 +11,7 @@ class PlayersController < ApplicationController
         @player = Player.new(position_id: params[:position_id])
     end 
 
-    def edit
-    end 
-
     def create
-    end 
-
-    def update
-    end
-
-    def destroy
     end 
 
     def selected
