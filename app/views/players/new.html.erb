@@ -1,4 +1,4 @@
-  <% if player.errors.any? %>
+  <% if @player.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(player.errors.count, "error") %> prohibited this player from being             saved:</h2>
       <ul>
