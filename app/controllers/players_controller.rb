@@ -1,10 +1,11 @@
 class PlayersController < ApplicationController
 
     def index
-        @players = Player.all
+        @players = Player.all.selected 
     end 
 
     def show 
+        @player = Player.find(params[:id])
     end 
 
     def new
@@ -12,6 +13,8 @@ class PlayersController < ApplicationController
     end 
 
     def create
+        @player = current_user.players.create(player_params)
+        redirect_to player_path(@player)
     end 
 
     def selected
@@ -19,5 +22,9 @@ class PlayersController < ApplicationController
     end
 
     private 
+
+    def player_params
+        params.require(:player).permit(:name, :position, :position_id, :user_id, :has_team, position_attributes: [:name])
+    end 
 
 end
