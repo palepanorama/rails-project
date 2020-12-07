@@ -1,6 +1,11 @@
 <h2>Welcome to Matt's Football Team Builder </h2>
 <div class = 'container'>
     <br>
-    <h4><%= link_to 'Create a New Player for Your Team', new_player_path %></h4>
-    <h4><%= link_to 'View Your Current Team', players_path %></h4>
+    <% if user_signed_in? %>
+        <h4><%= link_to 'Create a New Player for Your Team', new_player_path %></h4>
+        <h4><%= link_to 'View Your Current Team', players_path %></h4>
+    <% else %>
+        <li><%= link_to 'Signup', new_user_registration_path %></li>
+        <li><%= link_to 'Login', new_user_session_path %></li>
+    <% end %>
 </div>

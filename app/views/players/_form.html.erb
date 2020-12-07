@@ -1,12 +1,14 @@
-<%= form_for @player do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br>
-    <%= f.label :position %>
-    <%= f.collection_select :position_id, Position.order(:name),:id,:name, include_blank: true %>
-    <br>
-    <%= f.label :add_to_your_team? %>
-    <%= f.check_box :has_team %>
-    <br>
-    <%= f.submit %>
-<% end %>
+<div class = 'container'>
+    <%= form_for @player do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <%= f.label :position %>
+        <%= f.collection_select :position_id, Position.all, :id, :name  %>
+        <br>
+        <%= f.label :add_to_your_team? %>
+        <%= f.check_box :has_team %>
+        <br>
+        <%= f.submit %>
+    <% end %>
+</div>
