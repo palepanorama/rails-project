@@ -27,9 +27,19 @@ class PlayersController < ApplicationController
         @player = Player.find_by(id: params[:id])
     end 
 
-    def update 
-        @player = Player.find_by(id: params[:id])
-    end 
+    def update
+        @player = current_user.players.find_by(id: params[:id])
+        @player.update(
+            position_id: player_params[:position_id], 
+            name: player_params[:name]
+        )
+    
+        if @player
+            redirect_to player_path
+        else 
+            render :edit
+        end 
+    end
 
     def destroy 
         Player.find(params[:id]).destroy 
