@@ -1,0 +1,7 @@
+<%= form_for(@position) do |f| %>
+  
+    <%= f.label "Position" %>
+    <%= f.text_field :name %>
+
+    <%= f.submit @position.persisted? %>
+<% end %>

@@ -4,4 +4,6 @@ class Position < ApplicationRecord
     validates :name, uniqueness: true 
 
     accepts_nested_attributes_for :players 
+
+    
 end

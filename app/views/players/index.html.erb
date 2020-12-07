@@ -2,6 +2,6 @@
 <div class = 'container'>
     <% @players.selected.each do |p|%>
         <h3><%= link_to p.name, player_path(p) %></h3>
-        <h5><%= p.position.name %></h5>
+        <h5><%= link_to p.position.name, positions_path %></h5>
     <% end %>
 </div>

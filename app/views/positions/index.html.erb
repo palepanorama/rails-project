@@ -1,1 +1,7 @@
-kk
+<h2>Positions Filled On Your Team:</h2>
+<br>
+<% @positions.selected.each do |p|%>
+    <%= link_to p.name, position_players_path(p, @player) %>
+<% end %>
+
+
