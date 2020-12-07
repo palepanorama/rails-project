@@ -1,7 +1,7 @@
 <h1>My Team:</h1>
 <div class = 'container'>
     <% @players.selected.each do |p|%>
-        <h3><%= p.name %></h3>
+        <h3><%= link_to p.name, player_path(p) %></h3>
         <h5><%= p.position.name %></h5>
     <% end %>
 </div>

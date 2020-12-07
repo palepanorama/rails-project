@@ -2,8 +2,7 @@ class PlayersController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @players = Player.all
-        # @players = current_user.players.selected 
+        @players = current_user.players 
     end 
 
     def new
@@ -11,12 +10,17 @@ class PlayersController < ApplicationController
     end 
 
     def create
-        @player = current_user.players.create(player_params)
-        redirect_to player_path(@player)
-    end 
+        @player = current_user.players.build(player_params)
+       
+        if @player.save
+            redirect_to @player
+        else
+            render :new 
+        end 
+    end
 
     def show 
-        @player = Player.find(params[:id])
+        @player = current_user.players.find_by(id: params[:id])
     end 
 
     def edit 
