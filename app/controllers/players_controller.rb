@@ -1,8 +1,9 @@
 class PlayersController < ApplicationController
+    before_action :authenticate_user!
 
     def index
-        # @players = Player.all.selected 
-        @players = current_user.players.selected 
+        @players = Player.all.selected 
+        # @players = current_user.players.selected 
     end 
 
     def new
