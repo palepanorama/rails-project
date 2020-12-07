@@ -1,7 +1,7 @@
 <div class = 'container'>
     <h3><%= @player.name %></h3>
-    <p>Position: <%=@player.position.name%></p>
-    <p>On Your Team? <%= @player.has_team? %></p>
+    <p>Position: <%=@player.position.name %></p>
+    <p>On Your Team? <%= @player.has_team %></p>
 
     <%= link_to 'Edit Player',  edit_player_path(@player) %>
     <%= link_to 'Delete Player', @player, method: :delete   %>
