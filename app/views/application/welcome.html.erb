@@ -3,6 +3,7 @@
     <br>
     <% if user_signed_in? %>
         <h4><%= link_to 'Create a New Player for Your Team', new_player_path %></h4>
+        <h4><%= link_to 'Create a Position Not Available in the Drop Down Box', new_position_path %></h4>
         <h4><%= link_to 'View Your Current Team', players_path %></h4>
     <% else %>
         <li><%= link_to 'Signup', new_user_registration_path %></li>
