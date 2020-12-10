@@ -1,6 +1,6 @@
-<h1>Players Already on Teams:</h1>
-<div class = container>
-    <% @players.each do |p|%>
+<h1>My Team:</h1>
+<div class = 'container'>
+    <% @players.selected.each do |p|%>
         <h3><%= p.name %></h3>
         <h5><%= p.position.name %></h5>
     <% end %>

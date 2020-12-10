@@ -2,7 +2,7 @@ class PlayersController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @players = current_user.players 
+        @players = Player.search(params[:search])
     end 
 
     def new
@@ -53,7 +53,7 @@ class PlayersController < ApplicationController
     private 
 
     def player_params
-        params.require(:player).permit(:name, :position, :position_id, :user_id, :has_team, position_attributes: [:name])
+        params.require(:player).permit(:name, :search, :position, :position_id, :user_id, :has_team, position_attributes: [:name])
     end 
 
 end

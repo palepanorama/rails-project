@@ -20,9 +20,9 @@ class PositionsController < ApplicationController
         @position = Position.find(params[:id])
     end
 
-    def edit
-        @position = Position.find(params[:id])
-    end
+    # def edit
+    #     @position = Position.find(params[:id])
+    # end
 
     def update
         @position = Position.find(params[:id])
@@ -46,4 +46,3 @@ class PositionsController < ApplicationController
     
 end
 
-# end

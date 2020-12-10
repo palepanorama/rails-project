@@ -1,4 +1,10 @@
 <h1>My Team:</h1>
+    <h4>Search Players: </h4>
+    <%= form_tag('/players', method: :get) do %>
+        <%= text_field_tag :search %> <br>
+        <%= submit_tag "Search" %>
+    <% end %>
+
 <div class = 'container'>
     <% @players.selected.each do |p|%>
         <h3><%= link_to p.name, player_path(p) %></h3>
