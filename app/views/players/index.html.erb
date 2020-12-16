@@ -1,4 +1,4 @@
-<h1>My Team:</h1>
+<h1>All Players:</h1>
     <h4>Search Players: </h4>
     <%= form_tag('/players', method: :get) do %>
         <%= text_field_tag :search %> <br>
@@ -6,8 +6,11 @@
     <% end %>
 
 <div class = 'container'>
-    <% @players.selected.each do |p|%>
+    <% @players.each do |p|%>
         <h3><%= link_to p.name, player_path(p) %></h3>
-        <h5><%= p.position.name %></h5>
+
     <% end %>
+    <br>
+
+
 </div>

@@ -2,7 +2,14 @@ class PlayersController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @players = Player.search(params[:search])
+        if params[:position_id]
+            @players = current_user.players.where(position_id: params[:position_id])
+            @position = current_user.positions.find_by(id: params[:position_id])
+        elsif params[:search]
+            @players = Player.search(params[:search])
+        else 
+            @players = current_user.players 
+        end 
     end 
 
     def new
